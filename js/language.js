@@ -5,8 +5,8 @@ function redirectToLanguage() {
         const currentPath = window.location.pathname;
         if (selectedLanguage === 'fr' && currentPath !== '/index.html') {
             window.location.href = '/index.html'; // Rediriger vers la page française
-        } else if (selectedLanguage === 'de' && currentPath !== '/de-index.html') {
-            window.location.href = '/de-index.html'; // Rediriger vers la page allemande
+        } else if (selectedLanguage === 'de' && currentPath !== '/de/index.html') {
+            window.location.href = '/de/index.html'; // Rediriger vers la page allemande
         }
     }
 }
