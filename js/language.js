@@ -3,10 +3,18 @@ function redirectToLanguage() {
     const selectedLanguage = localStorage.getItem('selectedLanguage');
     if (selectedLanguage) {
         const currentPath = window.location.pathname;
+        let targetPath = '';
+
         if (selectedLanguage === 'fr' && currentPath !== '/index.html') {
-            window.location.href = '/index.html'; // Rediriger vers la page française
+            targetPath = '/index.html';
         } else if (selectedLanguage === 'de' && currentPath !== '/de/index.html') {
-            window.location.href = '/de/index.html'; // Rediriger vers la page allemande
+            targetPath = '/de/index.html';
+        }
+
+        if (targetPath) {
+            const currentHostname = window.location.hostname;
+            const newPath = `${currentHostname}/pklaw${targetPath}`;
+            window.location.href = newPath; // Rediriger vers la page dans la langue sélectionnée
         }
     }
 }
