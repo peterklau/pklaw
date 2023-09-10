@@ -13,7 +13,7 @@ function redirectToLanguage() {
 
         if (targetPath) {
             const currentHostname = window.location.hostname;
-            const newPath = `${currentHostname}/pklaw${targetPath}`;
+            const newPath = `${currentHostname}${currentPath.replace('/pklaw', '')}${targetPath}`;
             window.location.href = newPath; // Rediriger vers la page dans la langue sélectionnée
         }
     }
